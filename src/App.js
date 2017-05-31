@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import fetch from 'isomorphic-fetch';
 import logo from './logo.svg';
 import InventoryList from './InventoryList/InventoryList'
+import ItemDetail from './ItemDetail/ItemDetail'
 import './App.css';
 
 class App extends Component {
@@ -46,7 +47,11 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Inventory</h2>
         </div>
-        {this.renderInventoryWhenReady()}
+          <div className="App-content-container">
+          {this.renderInventoryWhenReady()}
+          < ItemDetail
+          />
+          </div>
       </div>
     );
   }

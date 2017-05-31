@@ -30,7 +30,7 @@ class InventoryList extends Component {
   }
   render(){
     return (
-      <div className="Inventory-list-container" >
+      <div className="InventoryList-container" >
         {this.renderItems()}
       </div>
     )
