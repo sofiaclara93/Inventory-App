@@ -9,14 +9,21 @@ class App extends Component {
 
   constructor(props){
     super(props);
+    let selectedItem = props.match.params.itemId;
     this.state = {
       fetching: true,
-      inventory: {}
+      inventory: {},
+      selectedItem: selectedItem,
     };
   }
 
+setSelectedItem = (itemId) => {
+  this.setState({
+    selectedItem: itemId
+  });
+}
   componentWillMount() {
-    fetch('http://localhost:4000/db')
+    fetch('http://localhost:3000/db')
       .then(response => {
         return response.json();
       })
@@ -36,8 +43,12 @@ class App extends Component {
       );
     }
     return (
-      <InventoryList items={this.state.inventory} />
-    )
+      <InventoryList
+        onClickItem={this.setSelectedItem}
+        items={this.state.inventory}
+        selectedItem={this.state.selectedItem}
+        />
+    );
   }
 
   render() {

@@ -1,3 +1,25 @@
 .InventoryList-container {
   flex: 0.5;
 }
+
+.inventory-container{
+  border: 1px solid red;
+  margin: 5px 0;
+  transition: 0.3s;
+  cursor: pointer;
+  display: block;
+}
+
+.inventory-container:hover{
+  background-color: #00F0FF;
+}
+
+.inventory-container:active{
+  background-color: #267A7F;
+
+}
+
+.inventory-container.selected {
+  background-color: limegreen;
+  color: white;
+}
