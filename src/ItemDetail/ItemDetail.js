@@ -16,10 +16,10 @@ class ItemDetail extends Component {
           {this.props.name}
         </p>
         <p className="ItemDetail-description">
-          {this.props.name}
+          {this.props.description}
         </p>
         <p className="ItemDetail-votes">
-          {this.props.name}
+          {this.props.votes}
          </p>
         <p className="ItemDetail-flavors">
           None

@@ -17,11 +17,11 @@ class App extends Component {
     };
   }
 
-setSelectedItem = (itemId) => {
-  this.setState({
-    selectedItem: itemId
-  });
-}
+  setSelectedItem = (itemId) => {
+    this.setState({
+      selectedItem: itemId
+    });
+  }
   componentWillMount() {
     fetch('http://localhost:3000/db')
       .then(response => {
@@ -34,6 +34,14 @@ setSelectedItem = (itemId) => {
           inventory: responseJson.inventory
         })
       });
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(this.props.match.params.itemId != nextProps.match.params.itemId) {
+      this.setState({
+        selectedItem: nextProps.match.params.itemId
+      })
+    }
   }
 
   renderInventoryWhenReady() {
@@ -51,6 +59,19 @@ setSelectedItem = (itemId) => {
     );
   }
 
+  renderItemDetailWhenSelected(){
+    if(this.state.selectedItem && this.state.inventory[this.state.selectedItem]){
+      const selectedItem = this.state.inventory[this.state.selectedItem]
+      return(
+        < ItemDetail
+          name={selectedItem.name}
+          description={selectedItem.description}
+          votes={selectedItem.votes}
+        />
+      )
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -60,8 +81,7 @@ setSelectedItem = (itemId) => {
         </div>
           <div className="App-content-container">
           {this.renderInventoryWhenReady()}
-          < ItemDetail
-          />
+          {this.renderItemDetailWhenSelected()}
           </div>
       </div>
     );
