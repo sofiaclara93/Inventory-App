@@ -1,3 +1,20 @@
 .ItemDetail-container {
+  display: flex;
+  flex-direction: column;
   flex: 1;
+  align-items: center;
+}
+
+.upvote-button {
+  padding: 5px;
+  border: solid 1px grey;
+  border-radius: 3px;
+  background-color: #6FA1FB;
+  color: white;
+  width: 68px;
+  cursor: pointer;
+}
+
+.upvote-button:hover {
+  background-color: #4D80D9
 }

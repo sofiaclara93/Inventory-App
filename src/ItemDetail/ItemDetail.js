@@ -7,6 +7,7 @@ class ItemDetail extends Component {
     description: PropTypes.string.isRequired,
     votes: PropTypes.number.isRequired,
     flavors: PropTypes.object,
+    onClickUpVote: PropTypes.func.isRequired,
   }
 
   render() {
@@ -21,6 +22,9 @@ class ItemDetail extends Component {
         <p className="ItemDetail-votes">
           {this.props.votes}
          </p>
+         <div className="upvote-button">
+         upvote
+         </div>
         <p className="ItemDetail-flavors">
           None
         </p>
