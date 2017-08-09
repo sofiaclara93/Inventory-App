@@ -1,9 +1,10 @@
 {
   "inventory": {
     "kind_bars": {
+      "id": 1,
       "name": "Kind Bars",
       "description": "A healthy candy bar alternative.",
-      "votes": 0,
+      "votes": 12,
       "flavors": {
         "seaSaltCaramel": {
           "name": "Sea Salt Caramel",
@@ -11,6 +12,39 @@
           "description": "The best flavor."
         }
       }
+    },
+    "mean_bars": {
+      "id": 2,
+      "name": "Mean Bars",
+      "description": "A shitty candy bar alternative and personality.",
+      "votes": 3,
+      "flavors": {
+        "seaSaltCaramel": {
+          "name": "Sea Salt Caramel",
+          "favorites": 0,
+          "description": "The best flavor."
+        }
+      }
+    },
+    "lame_bars": {
+      "id": 3,
+      "name": "Natural Valley crunchy sugar shit",
+      "description": "Sugar with some oats",
+      "votes": 5,
+      "flavors": {
+        "seaSaltCaramel": {
+          "name": "Sugarloaf",
+          "favorites": 0,
+          "description": "The sugar flavor."
+        }
+      }
+    },
+    "pizza_pringles": {
+      "id": "pizza_pringles",
+      "name": "Pizza Pringles",
+      "description": "Once you pop the fun don't stop!",
+      "votes": 4,
+      "flavors": {}
     }
   }
 }
